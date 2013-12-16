@@ -19,10 +19,18 @@ def pusblisher():
         loads = psutil.cpu_percent(interval=0,percpu=True)
         
         meminfo=psutil.virtual_memory()
-        
+        sys_info.memtotal = meminfo.total
+        sys_info.memavailable = meminfo.available
+        sys_info.mempercent = meminfo.percent
+        sys_info.memused = meminfo.used
+        sys_info.memfree = meminfo.free
+        sys_info.memactive = meminfo.active
+        sys_info.meminactive = meminfo.inactive
+        sys_info.membuffers = meminfo.buffers
+
         sys_info.cpu_load=loads
         
-        rospy.loginfo(sys_info)
+        #rospy.loginfo(sys_info)
         pub.publish(sys_info)
         rospy.sleep(1.0)
 
