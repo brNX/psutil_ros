@@ -13,7 +13,10 @@ catkin_python_setup()
 add_message_files(
    DIRECTORY msg
    FILES
-   Sysinfo.msg
+   Cpuload.msg
+   Network.msg
+   Meminfo.msg
+   Interface.msg
 )
 
 generate_messages(DEPENDENCIES std_msgs)
