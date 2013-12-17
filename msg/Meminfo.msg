@@ -1,0 +1,9 @@
+time stamp
+uint64 memtotal
+uint64 memavailable
+float32 mempercent
+uint64 memused
+uint64 memfree
+uint64 memactive
+uint64 meminactive 
+uint64 membuffers
