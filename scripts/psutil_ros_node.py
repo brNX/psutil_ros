@@ -23,8 +23,9 @@ def publisher():
         
         cpuloadmsg = Cpuload()
         cpuloadmsg.stamp = time
+	total = psutil.cpu_percent(interval=0)
         loads = psutil.cpu_percent(interval=0,percpu=True)
-        cpuloadmsg.cpu_load=loads
+        cpuloadmsg.cpu_load=[total]+loads
         
         meminfomsg = Meminfo()
         meminfomsg.stamp = time
